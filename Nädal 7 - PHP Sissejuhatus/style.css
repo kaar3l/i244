@@ -1,0 +1,16 @@
+body {
+        font-family: 'Dancing Script', cursive;
+    }
+span {
+    font-size: 3em;
+    display: inline-block;
+    text-align: center;
+    width: 1em; 
+    font-weight: bold;
+    float:left; /* et oleks teksti kõrval */
+    clear: both; /* et iga paragrahv algaks oma realt */
+}
+#wrap {
+    width: 800px;
+    margin: auto;
+}
