@@ -1,0 +1,16 @@
+<?php
+if(isset($_SESSION['valik'])){echo "Sa oled juba eelnevalt enda valiku teinud, uuesti ei saa hääletada";}else{echo "Tubli tegid enda valiku";}
+if(isset($_SESSION['valik'])){$id=$_SESSION['valik'];}else{$_SESSION['valik']=$id;}
+if ($id):	?>
+	<h3>Oled teinud oma valiku</h3>
+	<p>Valisid selle ilusa pildi: <br/>
+		<img src="<?php echo $pildid[$id]['src'];?>" alt="väljavalitu"/></p>
+		<a href="?page=vote">vali uuesti!</a>
+<br>
+<br>
+    <a href="?logout">Kustuta valikud</a>
+
+
+<?php else: ?>
+	<h3>Sellist pilti ei eksisteeri, palun tee uus <a href="?page=vote">valik</a>.</h3>
+<?php endif; ?>
