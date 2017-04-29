@@ -1,0 +1,5 @@
+CREATE TABLE loomaaed(id integer PRIMARY KEY auto_increment, name varchar(50) UNIQUE, age integer, type varchar(50), cage integer)
+INSERT INTO loomaaed (id, name, age, type, cage)
+VALUES (1, 'Kuki', 12, 'ahv', 5);
+INSERT INTO loomaaed (id, name, age, type, cage)
+VALUES (5, 'Pätu', 5, 'hobune', 6)
