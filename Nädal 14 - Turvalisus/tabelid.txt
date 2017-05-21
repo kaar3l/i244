@@ -28,3 +28,6 @@ INSERT INTO `<sinu kasutajanimi/kood>_loomaaed` (`id`, `nimi`, `puur`, `liik`) V
 (10, 'Kasper', 7, 'pildid/cow.png'),
 (11, 'Mingi', 7, 'pildid/cow.png');
 
+
+kylastajate tabelisse
+ALTER TABLE `kylastajad` ADD `roll` ENUM( 'user', 'admin' ) NOT NULL DEFAULT 'user'
