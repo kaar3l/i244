@@ -1,0 +1,95 @@
+#sisse {
+	background: url('pildid/v2rav.png') no-repeat center;
+	display: inline-block;
+	width: 100%;
+	padding:235px 0px;
+	text-align: center;
+	text-decoration: none;
+	color: gold;
+	font-weight: bold;
+	font-size: 30px;
+	text-shadow:0px 0px 10px black;
+}
+
+body {
+	background: #ffffb3;
+	margin:0px;
+}
+#wrap{
+	width: 800px;
+	background: white;
+	margin: auto;
+	overflow: auto;
+	min-height:600px;
+	box-shadow: 0px 0px 12px #888888;
+}
+#menu {
+	list-style: none;
+	background: #ffe6e6;
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+	box-shadow: 0px 0px 12px #888888;
+}
+#menu li, #menu a {
+	display: inline-block;
+}
+#menu a {
+	padding:5px 20px;
+	color: #5b5b3e;
+	text-decoration: none;
+	transition: all 0.3s ease-in;
+        text-shadow: 0px 0px 0px;
+}
+#menu a:hover {
+	background: #ffb3b3;
+	color: DarkSlateGray;
+        text-shadow: 0px 0px 1px;
+}
+#content {
+	padding:10px;
+}
+#login{
+	margin:auto;
+	width: 50%;	
+	margin-top:20%;
+	text-align: center;
+}
+.puur {
+	border: dashed grey 2px;
+	margin:20px;
+	float:left;
+	width: 40%;
+	padding:10px;
+}
+.puur img {
+	height: 50px;
+
+}
+.puur h5 {
+	margin: 0px;
+}
+.clear {
+	clear:both;
+}
+
+table, td, th {    
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto;
+}
+
+th {
+    padding: 15px;
+    background: #ccffcc;
+}
+
+td {
+    padding: 15px;
+}
+tr:nth-child(even) {background-color: #f2f2f2}
