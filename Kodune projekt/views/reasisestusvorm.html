@@ -1,0 +1,15 @@
+<form action="?page=lisa_kulurida method="POST" enctype="multipart/form-data">
+<table>
+	<tr><td>Kuupäev:</td><td><input type="date" name="date"></td></tr><br>
+	<tr><td>Liik:</td><td><input type="text" name="liik"></td></tr><br>
+	<tr><td>Summa:</td><td><input type="text" name="summa"></td></tr><br>
+	<tr><td>Märkus:</td><td><input type="text" name="m2rkus"></td></tr><br>
+	<tr><td colspan="2"><input type="submit" value="Lisa uus kulurida"/></td></tr>
+</table>
+
+</form>
+<?php if (isset($errors)):?>
+		<?php foreach($errors as $error):?>
+			<div style="color:red;"><?php echo htmlspecialchars($error); ?></div>
+		<?php endforeach;?>
+	<?php endif;?>

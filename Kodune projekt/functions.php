@@ -31,35 +31,50 @@ function kuva_kuluread(){
   		while($row = $result->fetch_assoc()) {
 			echo "<tr>";
 			echo "<td>".$row["aeg"]."</td>";
-			$liiginimi=tolgi_liik($row["liik"]);
-			echo "<td>".$liiginimi."</td>";
+			echo "<td>".$row["liik"]."</td>";
 			echo "<td>".$row["summa"]."</td>";
 			echo "<td>".$row["kommentaar"]."</td>";
 			echo "</tr>";
-			$liiginimi=tolgi_liik($kulu_id);
-			echo $liiginimi;
  		}
 	} else {
  		echo "Pole kuluridu sisestatud";
 	}
 	echo "</tr></table>";
 	$connection->close();
+	echo "Siia võiks lisada graafiku vms ka (aeg+kulud) pi chart kululiigid";
 //	include_once('views/puurid.html');
 }
 
-function tolgi_liik($kulu_id){
-	global $connection;
-	$query = "SELECT 'id'=$kulu_id FROM `kululiigid` WHERE 1";
-	$result= mysqli_query($connection, $query);
-	if ($result->num_rows > 0) {
-  		while($row = $result->fetch_assoc()) {
-			return  $row["liik"];
- 		}
-	} else {
-			
-	}
-	$connection->close();
+
+function lisa_kulurida(){
+		global $connection;
+		if(empty($_POST['date']) and empty($_POST['liik']) and empty($_POST['summa'])) {
+			echo "Lisa kulurida!<br>";
+			echo "Täita tuleb kuupäev, liik ja summa.";
+		} else {
+			$kuupaev = mysqli_real_escape_string($connection,$_POST['date']);
+			$liik = mysqli_real_escape_string($connection,$_POST['liik']);
+			$summa = mysqli_real_escape_string($connection,$_POST['summa']);
+			$m2rkus = mysqli_real_escape_string($connection,$_POST['m2rkus']);
+//			$sql = "INSERT INTO loomad (nimi, puur, liik) VALUES ('$nimi', $puur, '$uploadResult')";
+//			mysqli_close($conn);
+			echo $kuupaev;
+			echo $liik;
+			echo $summa;
+			echo $m2rkus;
+			if (mysqli_query($connection, $sql)) {
+				echo "Uus loom lisatud edukalt";
+				header("location: kulud.php?page=lisa_kulu");
+			} else {
+				echo "Error: " . $sql . "<br>" . mysqli_error($connection);
+			}
+		}
+		include_once('views/reasisestusvorm.html');
 }
+
+
+
+
 
 
 function muuda_looma(){
@@ -114,7 +129,7 @@ function muuda_looma(){
 		}
 		//Salvestame nüüd loomaid ära enne uue lehe laadimist, et teaks mis looma uuendada
 		$_SESSION['muudetavaLoomaID']=$muudetavaLoomaID;
-		
+
 		include_once('views/editvorm.html');
 	} else {
 		//Kuna sa poel admin, siis viskame loomaaia vaaatesse

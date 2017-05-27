@@ -20,8 +20,8 @@ switch($page){
 	case "logout":
 		logout();
 	break;
-	case "lisa":
-		lisa();
+	case "lisa_kulu":
+		lisa_kulurida();
 	break;
 	case "muuda":
 		muuda_looma();
