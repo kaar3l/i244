@@ -1,0 +1,12 @@
+<form action="?page=lisaliike" method="POST" enctype="multipart/form-data">
+<table>
+	<tr><td>Liik:</td><td><input type="text" name="liik"></td></tr><br>
+	<tr><td>Kommentaar:</td><td><input type="text" name="m2rkus"></td></tr><br>
+</table>
+<input type="submit" value="Lisa uus kululiik"/>
+</form>
+<?php if (isset($errors)):?>
+		<?php foreach($errors as $error):?>
+			<div style="color:red;"><?php echo htmlspecialchars($error); ?></div>
+		<?php endforeach;?>
+	<?php endif;?>

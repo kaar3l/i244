@@ -9,16 +9,8 @@ function connect_db(){
 	mysqli_query($connection, "SET CHARACTER SET UTF8") or die("Ei saanud baasi utf-8-sse - ".mysqli_error($connection));
 }
 
-
 function kuva_kuluread(){
-	// siia on vaja funktsionaalsust
-//	if(!empty($_SESSION['user'])){
-//		echo "Oled kenasti sisse logitud kasutaja: ";
-//		echo $_SESSION['user'];
-//	}else{
-//		header("location: loomaaed.php?page=login");
-//	}
-
+	//Kuvab kuluread, mis on sisestatud
 	global $connection;
 	$query = "SELECT * FROM `kulud`";
 	$result= mysqli_query($connection, $query);
@@ -28,10 +20,11 @@ function kuva_kuluread(){
 		echo "<th>Liik</th>";
 		echo "<th>Summa</th>";
 		echo "<th>Märkus</th>";
-  		while($row = $result->fetch_assoc()) {
+  	while($row = $result->fetch_assoc()) {
 			echo "<tr>";
 			echo "<td>".$row["aeg"]."</td>";
-			echo "<td>".$row["liik"]."</td>";
+			$liiginimi=tagasta_kululiik($row["liik"]);
+			echo "<td>".$liiginimi."</td>";
 			echo "<td>".$row["summa"]."</td>";
 			echo "<td>".$row["kommentaar"]."</td>";
 			echo "</tr>";
@@ -42,12 +35,12 @@ function kuva_kuluread(){
 	echo "</tr></table>";
 	$connection->close();
 	echo "Siia võiks lisada graafiku vms ka (aeg+kulud) pi chart kululiigid";
-//	include_once('views/puurid.html');
 }
 
-
 function lisa_kulurida(){
+		//Lisab kuluridadesse ridu juurde vormi seest
 		global $connection;
+		include_once('views/reasisestus.html');
 		if(empty($_POST['date']) and empty($_POST['liik']) and empty($_POST['summa'])) {
 			echo "Lisa kulurida!<br>";
 			echo "Täita tuleb kuupäev, liik ja summa.";
@@ -56,21 +49,109 @@ function lisa_kulurida(){
 			$liik = mysqli_real_escape_string($connection,$_POST['liik']);
 			$summa = mysqli_real_escape_string($connection,$_POST['summa']);
 			$m2rkus = mysqli_real_escape_string($connection,$_POST['m2rkus']);
-//			$sql = "INSERT INTO loomad (nimi, puur, liik) VALUES ('$nimi', $puur, '$uploadResult')";
-//			mysqli_close($conn);
-			echo $kuupaev;
-			echo $liik;
-			echo $summa;
-			echo $m2rkus;
+			$sql = "INSERT INTO `kulutused`.`kulud` (aeg, liik, summa, kommentaar) VALUES ('$kuupaev', $liik, $summa, '$m2rkus')";
+			echo $_POST['date'];
+			echo "<br>";
+			echo $_POST['liik'];
+			echo "<br>";
+			echo $_POST['summa'];
+			echo "<br>";
+			echo $_POST['m2rkus'];
+			echo "<br>";
 			if (mysqli_query($connection, $sql)) {
-				echo "Uus loom lisatud edukalt";
-				header("location: kulud.php?page=lisa_kulu");
+				echo "Uus rida lisatud edukalt";
 			} else {
 				echo "Error: " . $sql . "<br>" . mysqli_error($connection);
 			}
+			mysqli_close($conn);
 		}
-		include_once('views/reasisestusvorm.html');
 }
+
+function lisa_kululiike(){
+	//Lisab kululiike juurde
+	//Näitab kululiigid
+		global $connection;
+		display_kululiigid();
+
+		include_once('views/liigisisestus.html');
+
+		if(empty($_POST['liik'])) {
+			//Do nothing
+		} else {
+			$liik = mysqli_real_escape_string($connection,$_POST['liik']);
+			$m2rkus = mysqli_real_escape_string($connection,$_POST['m2rkus']);
+			$sql = "INSERT INTO `kulutused`.`kululiigid` (liik, kommentaar) VALUES ('$liik', '$m2rkus')";
+			echo $_POST['liik'];
+			echo "<br>";
+			echo $_POST['m2rkus'];
+			echo "<br>";
+			if (mysqli_query($connection, $sql)) {
+				echo "Uus rida lisatud edukalt";
+				header("location: kulud.php?page=lisaliike");
+			} else {
+				echo "Error: " . $sql . "<br>" . mysqli_error($connection);
+			}
+			mysqli_close($conn);
+		}
+}
+
+function display_kululiigid(){
+	global $connection;
+	$query = "SELECT * FROM `kululiigid`";
+	$result= mysqli_query($connection, $query);
+	if ($result->num_rows > 0) {
+		echo "<table><tr>";
+		echo "<th>Liik</th>";
+		echo "<th>Märkus</th>";
+  		while($row = $result->fetch_assoc()) {
+			echo "<tr>";
+			echo "<td>".$row["liik"]."</td>";
+			echo "<td>".$row["kommentaar"]."</td>";
+			echo "</tr>";
+ 		}
+	} else {
+ 		echo "Pole kululiike sisestatud";
+	}
+	echo "</tr></table>";
+}
+
+function display_kululiigivalik(){
+	global $connection;
+	$query = "SELECT * FROM `kululiigid`";
+	$result= mysqli_query($connection, $query);
+	if ($result->num_rows > 0) {
+		  echo ("<select name='liik'>");
+  		while($row = $result->fetch_assoc()) {
+				echo $row["liik"];
+				echo "<option value=".$row["id"].">".$row["liik"]."</option>";
+ 			}
+			echo ("</select>");
+			return ($kululiik);
+	} else {
+ 			return ("Sisesta kululiik");
+	}
+}
+
+
+function tagasta_kululiik($id){
+	global $connection;
+	$query = "SELECT * FROM `kululiigid` WHERE id=$id";
+	$result= mysqli_query($connection, $query);
+	if ($result->num_rows > 0) {
+  	while($row = $result->fetch_assoc()) {
+			return $row["liik"];
+		}
+	} else {
+ 		return ("error");
+	}
+}
+
+
+
+
+
+
+
 
 
 
