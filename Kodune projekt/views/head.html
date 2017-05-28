@@ -5,15 +5,48 @@
 	<title>Kuluhaldus</title>
 	<link rel="icon" href="pictures/moneybag.ico">
 	<link rel="stylesheet" type="text/css" href="stiil.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script>
+		$(document).ready(function(){
+    	$(".btn1").click(function(){
+        	$("p").fadeOut()
+    	});
+    	$(".btn2").click(function(){
+        	$("p").fadeIn();
+    	});
+		});
+	</script>
+
 </head>
 <body>
 <div id="wrap">
 	<ul id="menu">
-		<li><a href="?">Pealeht</a></li>
-			<li><a href="?page=kuluread">Kuluread</a></li>
-			<li><a href="?page=lisakulu">Lisa kuluridu</a></li>
-			<li><a href="?page=lisaliike">Lisa kululiike</a></li>
-			<li><a href="?page=logout">Logi välja</a></li>
-			<li><a href="?page=login">Logi sisse</a></li>
+
+			<?php
+			if(!empty($_SESSION['user'])){
+				//Oled loginud
+				echo "<li><a href='?'>Pealeht</a></li>";
+				echo "<li><a href='?page=kuluread'>Kuluread</a></li>";
+				echo "<li><a href='?page=lisakulu'>Lisa kuluridu</a></li>";
+				echo "<li><a href='?page=lisaliike'>Lisa kululiike</a></li>";
+				echo "<li><a href='?page=logout'>Logi välja</a></li>";
+			}else{
+				//Pole loginud
+				echo "<li><a href='?page=login'>Logi sisse</a></li>";
+				//header("location: loomaaed.php?page=login");
+			};?>
 	</ul>
+<div id="logitud">
+	<?php
+	if(!empty($_SESSION['user'])){
+		echo "Oled sisse logitud kasutaja: ";
+	};
+  echo "<b>";
+	echo $_SESSION['user'];
+	if(!empty($_SESSION['admin'])){
+		echo ("(admin)");
+	};
+	echo "</b>";?>
+</div>
 	<div id="content">

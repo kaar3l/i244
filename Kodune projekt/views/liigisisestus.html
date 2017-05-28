@@ -1,9 +1,15 @@
 <form action="?page=lisaliike" method="POST" enctype="multipart/form-data">
+<div class="textHolder">
+<p>Antud lehel saad lisada erinevaid kululiike. Liigi lisamiseks on vaja täita ära lahtrid "Liik" ja "Kommentaar", ning vajutada nuppu "Lisa uus kululiik". Kululiikide all on mõeldud erinevaid kulusid nagu näiteks: toit, eluase, transport jne.</p>
+</div>
 <table>
-	<tr><td>Liik:</td><td><input type="text" name="liik"></td></tr><br>
-	<tr><td>Kommentaar:</td><td><input type="text" name="m2rkus"></td></tr><br>
+	<tr><th>Tüüp</th><th></th></tr>
+	<tr><td>Liik</td><td><input type="text" name="liik"></td></tr>
+	<tr><td>Kommentaar</td><td><input type="text" name="m2rkus"></td></tr>
 </table>
-<input type="submit" value="Lisa uus kululiik"/>
+<div class="buttonHolder">
+<button type="submit">Lisa uus kululiik</button>
+</div>
 </form>
 <?php if (isset($errors)):?>
 		<?php foreach($errors as $error):?>

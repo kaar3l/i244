@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="moneybag.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8"
+     inkscape:cx="345.55257"
+     inkscape:cy="840.27548"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="1742"
+     inkscape:window-height="1187"
+     inkscape:window-x="81"
+     inkscape:window-y="29"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#000000;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 382.15625,105.40625 c -18.021,-2.45936 -23.55164,4.42075 -29.3125,6.59375 -24.908,10.87724 -40.39707,6.3606 -55,0.375 l 26.3125,45.40625 c 9.09534,3.0937 18.18591,4.61656 27.28125,3.5 10.81179,0.048 20.78584,-1.99143 30.375,-5 l 21.75,-44.625 c -8.87336,-4.86145 -15.70346,-5.47173 -21.40625,-6.25 z m -1.125,58.71875 c -6.67811,2.17161 -15.41033,3.7673 -29.59375,3.9375 -10.47426,1.28167 -19.49558,-0.85204 -28.125,-3.875 -45.17099,14.40717 -83.18002,40.57715 -89.03125,66.75 0.30552,50.7588 54.17527,72.86769 117.15625,73.5625 62.18678,-0.55939 122.42845,-23.33048 122.84375,-70.71875 -6.67326,-31.43265 -49.82548,-56.18195 -93.25,-69.65625 z"
+       id="path2985"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sccccccsccccccc"
+       inkscape:export-filename="/var/www/html/Kodune projekt/pictures/moneybag.png"
+       inkscape:export-xdpi="223.87321"
+       inkscape:export-ydpi="223.87321" />
+    <g
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+       id="text2997"
+       transform="matrix(2.1520887,0,0,2.1520887,28.994519,-78.87252)"
+       inkscape:export-filename="/var/www/html/Kodune projekt/pictures/moneybag.png"
+       inkscape:export-xdpi="223.87321"
+       inkscape:export-ydpi="223.87321">
+      <path
+         d="m 152.31305,161.45538 -3.16406,0 -0.0195,-5.8789 c -1.62762,-0.0651 -3.20314,-0.2474 -4.72657,-0.54688 -1.52344,-0.29948 -3.00781,-0.71614 -4.45312,-1.25 l 0,-5.11719 c 1.49739,0.76824 3.0078,1.36069 4.53125,1.77735 1.53645,0.40365 3.09244,0.63151 4.66797,0.68359 l 0,-6.07422 -0.64453,-0.11718 c -3.11199,-0.54687 -5.32553,-1.40624 -6.64063,-2.57813 -1.30209,-1.17186 -1.95313,-2.85806 -1.95312,-5.05859 -1e-5,-2.33071 0.79426,-4.14712 2.38281,-5.44922 1.60155,-1.31508 3.8802,-2.03123 6.83594,-2.14844 l 0.0195,-4.51172 3.16406,0 0,4.4336 c 1.30207,0.10419 2.60415,0.26695 3.90625,0.48828 1.30206,0.22138 2.61065,0.50783 3.92578,0.85937 l 0,4.96094 c -1.3021,-0.54686 -2.60419,-0.97003 -3.90625,-1.26953 -1.3021,-0.31248 -2.61069,-0.50128 -3.92578,-0.56641 l 0,5.60547 0.625,0.11719 c 3.30727,0.52085 5.62498,1.39324 6.95312,2.61719 1.34113,1.21095 2.0117,3.00782 2.01172,5.39062 -2e-5,2.39584 -0.79429,4.23829 -2.38281,5.52734 -1.58856,1.27605 -3.9909,2.00521 -7.20703,2.1875 l 0,5.91797 m -3.16406,-22.20703 0,-5.09765 c -0.92449,0.0521 -1.66668,0.30601 -2.22657,0.76171 -0.54688,0.44273 -0.82032,1.00914 -0.82031,1.69922 -1e-5,0.76825 0.2539,1.37372 0.76172,1.81641 0.5078,0.4297 1.26952,0.70314 2.28516,0.82031 m 3.16406,6.36719 0,5.42969 c 1.1328,-0.013 1.97915,-0.23437 2.53906,-0.66407 0.5729,-0.42968 0.85936,-1.07421 0.85938,-1.93359 -2e-5,-0.88541 -0.26044,-1.54296 -0.78125,-1.97266 -0.52085,-0.44269 -1.39325,-0.72915 -2.61719,-0.85937"
+         style="font-variant:normal;font-weight:bold;font-stretch:normal;fill:#ffffff;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans Bold"
+         id="path3002"
+         inkscape:connector-curvature="0" />
+    </g>
+  </g>
+</svg>

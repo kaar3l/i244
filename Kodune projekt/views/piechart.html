@@ -1,0 +1,32 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
+<script type="text/javascript">
+window.onload = function () {
+	var chart = new CanvasJS.Chart("chartContainer",
+	{
+		title:{
+			text: "Kulud liigiti",
+			fontSize: 20
+		},
+		legend: {
+			maxWidth: 350,
+			itemWidth: 120
+		},
+		data: [
+		{
+			type: "pie",
+			showInLegend: false,
+			legendText: "{indexLabel}",
+			dataPoints: [
+				<?php
+					foreach ($input as $value) {
+						echo "{ y: $value[2],indexLabel: '$value[1]'},";
+					}
+				?>
+			]
+		}
+		]
+	});
+	chart.render();
+}
+</script>
+<div id="chartContainer" style="height: 500px; width: 100%;"></div>

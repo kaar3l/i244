@@ -1,0 +1,19 @@
+	<script>
+	$(document).ready(function(){
+	    $("p").hide();
+    	$("#show").click(function(){
+	        $("p").show(1000);
+	    });
+	});
+	</script>
+<div class="buttonHolder">
+
+<?php
+if(!empty($_SESSION['user'])){
+	//Oled loginud
+	echo "<button id='show'>Selgitus</button>";
+}else{
+	//Pole loginud
+};?>
+
+</div>

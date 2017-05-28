@@ -9,6 +9,7 @@ if (isset($_GET['page']) && $_GET['page']!=""){
 }
 
 include_once('views/head.html');
+include_once('views/selgitus.html');
 
 switch($page){
 	case "login":
@@ -30,7 +31,7 @@ switch($page){
 		muuda_looma();
 	break;
 	default:
-		include_once('views/v2rav.html');
+		include_once('views/pealeht.html');
 	break;
 }
 
