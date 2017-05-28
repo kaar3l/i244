@@ -1,13 +1,13 @@
 <form action="?page=lisakulu" method="POST" enctype="multipart/form-data">
 <p>Antud lehel saad lisada vastavalt kululiikidele väljaminekuid. Väljamineku lisamiseks on tarvis täita ära "Kuupäev", "Summa" ja "Märkus" ning valida kululiik eelnevalt sisestatud variantide hulgast.</p>
 <table>
-	<tr><th>Tüüp</th><th>Sisestus</th></tr><br>
-	<tr><td>Kuupäev:</td><td><input type="date" name="date" value="2017-01-01"></td></tr><br>
+	<tr><th>Tüüp</th><th>Sisestus</th></tr>
+	<tr><td>Kuupäev:</td><td><input type="date" name="date" value="2017-01-01"></td></tr>
 	<tr><td>Liik:</td><td>
 	<?php display_kululiigivalik(); ?>
-	</td></tr><br>
-	<tr><td>Summa:</td><td><input type="text" name="summa"></td></tr><br>
-	<tr><td>Märkus:</td><td><input type="text" name="m2rkus"></td></tr><br>
+	</td></tr>
+	<tr><td>Summa:</td><td><input type="text" name="summa"></td></tr>
+	<tr><td>Märkus:</td><td><input type="text" name="m2rkus"></td></tr>
 </table>
 <div class="buttonHolder">
 <button type="submit">Lisa uus kulurida</button>

@@ -28,8 +28,10 @@
 				//Oled loginud
 				echo "<li><a href='?'>Pealeht</a></li>";
 				echo "<li><a href='?page=kuluread'>Kuluread</a></li>";
+				if(!empty($_SESSION['admin'])){
 				echo "<li><a href='?page=lisakulu'>Lisa kuluridu</a></li>";
 				echo "<li><a href='?page=lisaliike'>Lisa kululiike</a></li>";
+				};
 				echo "<li><a href='?page=logout'>Logi välja</a></li>";
 			}else{
 				//Pole loginud
