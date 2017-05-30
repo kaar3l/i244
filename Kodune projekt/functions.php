@@ -2,9 +2,13 @@
 function connect_db(){
 	global $connection;
 	$host="localhost";
-	$user="root";
-	$pass="laptop";
-	$db="kulutused";
+	$user="kaineee_kulu";
+	$pass="H2stiRaskeParool";
+	$db="kaineee_kulutused";
+	//$host="localhost";
+	//$user="root";
+	//$pass="laptop";
+	//$db="kaineee_kulutused";
 	$connection = mysqli_connect($host, $user, $pass, $db) or die("ei saa ühendust mootoriga- ".mysqli_error());
 	mysqli_query($connection, "SET CHARACTER SET UTF8") or die("Ei saanud baasi utf-8-sse - ".mysqli_error($connection));
 }
@@ -72,7 +76,7 @@ function lisa_kulurida(){
 				$summapunktiga=str_replace(',', '.', $_POST['summa']);
 				$summa = mysqli_real_escape_string($connection,$summapunktiga);
 				$m2rkus = mysqli_real_escape_string($connection,$_POST['m2rkus']);
-				$sql = "INSERT INTO `kulutused`.`kulud` (aeg, liik, summa, kommentaar) VALUES ('$kuupaev', $liik, $summa, '$m2rkus')";
+				$sql = "INSERT INTO `kulud` (aeg, liik, summa, kommentaar) VALUES ('$kuupaev', $liik, $summa, '$m2rkus')";
 				if (mysqli_query($connection, $sql)) {
 					echo "Uus rida lisatud edukalt";
 					header("location: kulud.php?page=kuluread");
@@ -112,7 +116,7 @@ function lisa_kululiike(){
 				} else {
 					$liik = mysqli_real_escape_string($connection,$_POST['liik']);
 					$m2rkus = mysqli_real_escape_string($connection,$_POST['m2rkus']);
-					$sql = "INSERT INTO `kulutused`.`kululiigid` (liik, kommentaar) VALUES ('$liik', '$m2rkus')";
+					$sql = "INSERT INTO `kululiigid` (liik, kommentaar) VALUES ('$liik', '$m2rkus')";
 					echo $_POST['liik'];
 					echo "<br>";
 					echo $_POST['m2rkus'];
@@ -194,8 +198,8 @@ function logi(){
 	global $connection;
 	$username = mysqli_real_escape_string($connection,$_POST['user']);
 	$password = mysqli_real_escape_string($connection,$_POST['pass']);
-	$sql = "SELECT id FROM `kulutused`.`kasutajad` WHERE `user` = '$username' AND `pass`=SHA1('$password')";
-	$sql2= "SELECT admin FROM `kulutused`.`kasutajad` WHERE `user` = '$username' AND `pass`=SHA1('$password')";
+	$sql = "SELECT id FROM `kasutajad` WHERE `user` = '$username' AND `pass`=SHA1('$password')";
+	$sql2= "SELECT admin FROM `kasutajad` WHERE `user` = '$username' AND `pass`=SHA1('$password')";
 	//USER test:
 	$result = mysqli_query($connection,$sql);
 	$row = mysqli_fetch_array($result,MYSQLI_ASSOC);

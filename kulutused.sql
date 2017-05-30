@@ -60,23 +60,7 @@ CREATE TABLE IF NOT EXISTS `kulud` (
 -- Dumping data for table `kulud`
 --
 
-INSERT INTO `kulud` (`id`, `aeg`, `liik`, `summa`, `kommentaar`) VALUES
-(1, '2017-05-23', 2, 3.20, 'Supp'),
-(3, '2017-05-26', 3, 2.50, 'Leib'),
-(4, '2017-05-10', 2, 12.90, NULL),
-(5, '2017-05-05', 2, 23.00, 'Test'),
-(6, '2017-05-05', 2, 23.50, 'Test'),
-(7, '2017-05-05', 2, 23.50, 'Test'),
-(8, '2017-05-05', 2, 23.50, 'Test'),
-(10, '2017-05-02', 2, 23.50, 'Test'),
-(11, '2017-05-16', 1, 11.00, 'Test'),
-(12, '2017-05-10', 2, 60.00, 'Riiga'),
-(13, '2017-05-17', 2, 34.00, 'Spaaina'),
-(14, '2017-05-01', 11, 100.00, 'Hambaauk'),
-(15, '2017-04-11', 1, 20.00, 'Söök'),
-(17, '2017-05-05', 11, 15.67, 'Jalg'),
-(19, '2017-05-04', 13, 34.78, 'Viin ja Õlu'),
-(20, '2017-03-04', 13, 1.30, 'Viin');
+INSERT INTO `kulud` (`id`, `aeg`, `liik`, `summa`, `kommentaar`) VALUES;
 
 -- --------------------------------------------------------
 
@@ -95,11 +79,7 @@ CREATE TABLE IF NOT EXISTS `kululiigid` (
 --
 
 INSERT INTO `kululiigid` (`id`, `liik`, `kommentaar`) VALUES
-(1, 'toit', 'poest ja restoranist'),
-(2, 'transport', 'auto, buss, jalgratas'),
-(3, 'elamispind', 'üür ja ost'),
-(11, 'Meditsiin', 'arst, hambaravi'),
-(13, 'alkohol', 'Viin ja Õlu');
+(1, 'toit', 'poest ja restoranist');
 
 --
 -- Indexes for dumped tables

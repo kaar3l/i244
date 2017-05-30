@@ -1,16 +1,16 @@
 <h1>Prindime tabeli sisu</h1>
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "laptop";
-$dbname = "kulutused";
+$username = "kaineee_kulu";
+$password = "H2stiRaskeParool";
+$dbname = "kaineee_kulutused";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-} 
+}
 
 $sql = "SELECT * FROM `kulud`";
 //$sql = "SELECT id, name, age, type, cage";
