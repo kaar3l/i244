@@ -27,9 +27,6 @@ switch($page){
 	case "lisaliike":
 		lisa_kululiike();
 	break;
-	case "muuda":
-		muuda_looma();
-	break;
 	default:
 		include_once('views/pealeht.html');
 	break;
